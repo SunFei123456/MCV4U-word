@@ -406,6 +406,196 @@
                 padding: 20px;
             }
         }
+
+        /* Math Formulas Section - Table Styles */
+        .formulas-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #ffffff 0%, #fef6f3 100%);
+            position: relative;
+        }
+
+        .formulas-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(232, 140, 106, 0.3), transparent);
+        }
+
+        .formulas-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .formulas-tag {
+            display: inline-block;
+            padding: 6px 18px;
+            background: rgba(232, 140, 106, 0.1);
+            color: #e88c6a;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(232, 140, 106, 0.2);
+        }
+
+        .formulas-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #5a3d36;
+            margin-bottom: 12px;
+        }
+
+        .formulas-subtitle {
+            font-size: 1rem;
+            color: #8b6b63;
+        }
+
+        .formula-table-wrapper {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(90, 61, 54, 0.08);
+            border: 1px solid rgba(232, 140, 106, 0.12);
+        }
+
+        .table-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(135deg, #e88c6a 0%, #f4a6a0 100%);
+            padding: 16px 24px;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .formula-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .formula-table thead {
+            background: linear-gradient(135deg, #fef6f3 0%, #fff8f5 100%);
+        }
+
+        .formula-table th {
+            padding: 14px 20px;
+            text-align: left;
+            font-weight: 600;
+            color: #5a3d36;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid rgba(232, 140, 106, 0.2);
+        }
+
+        .formula-table th:first-child {
+            width: 30%;
+        }
+
+        .formula-table th:nth-child(2) {
+            width: 45%;
+        }
+
+        .formula-table th:last-child {
+            width: 25%;
+        }
+
+        .formula-table td {
+            padding: 14px 20px;
+            border-bottom: 1px solid rgba(232, 140, 106, 0.08);
+            color: #5a3d36;
+        }
+
+        .formula-table tbody tr {
+            transition: all 0.2s ease;
+        }
+
+        .formula-table tbody tr:hover {
+            background: linear-gradient(90deg, rgba(254, 246, 243, 0.5) 0%, rgba(255, 248, 245, 0.3) 100%);
+        }
+
+        .formula-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .formula-table td:nth-child(2) {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+            color: #e88c6a;
+            font-size: 0.9rem;
+        }
+
+        .formula-table td:last-child {
+            color: #8b6b63;
+            font-size: 0.85rem;
+        }
+
+        /* Mobile styles for formulas section */
+        @media (max-width: 768px) {
+            .formulas-section {
+                padding: 60px 0;
+            }
+
+            .formulas-title {
+                font-size: 1.5rem;
+            }
+
+            .formula-table-wrapper {
+                margin: 0 16px 30px;
+                border-radius: 12px;
+            }
+
+            .table-title {
+                padding: 14px 16px;
+                font-size: 0.9rem;
+            }
+
+            .formula-table th,
+            .formula-table td {
+                padding: 12px 16px;
+                font-size: 0.85rem;
+            }
+
+            .formula-table th:first-child {
+                width: 35%;
+            }
+
+            .formula-table th:nth-child(2) {
+                width: 40%;
+            }
+
+            .formula-table th:last-child {
+                width: 25%;
+            }
+
+            .formula-table td:nth-child(2) {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .formula-table th,
+            .formula-table td {
+                padding: 10px 12px;
+                font-size: 0.8rem;
+            }
+
+            .formula-table td:nth-child(2) {
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 
@@ -603,6 +793,185 @@
                         <span class="resource-format">KATC Complete</span>
                     </div>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="formulas-section">
+        <div class="container">
+            <div class="formulas-header">
+                <span class="formulas-tag">Quick Reference</span>
+                <h2 class="formulas-title">Essential Derivative Formulas</h2>
+                <p class="formulas-subtitle">Commonly used mathematical expressions for calculus derivatives</p>
+            </div>
+
+            <!-- Basic Derivative Rules Table -->
+            <div class="formula-table-wrapper">
+                <h3 class="table-title">Basic Derivative Rules</h3>
+                <table class="formula-table">
+                    <thead>
+                        <tr>
+                            <th>Function f(x)</th>
+                            <th>Derivative f'(x)</th>
+                            <th>Rule Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>xⁿ</td>
+                            <td>nxⁿ⁻¹</td>
+                            <td>Power Rule</td>
+                        </tr>
+                        <tr>
+                            <td>eˣ</td>
+                            <td>eˣ</td>
+                            <td>Exponential</td>
+                        </tr>
+                        <tr>
+                            <td>ln x</td>
+                            <td>1/x</td>
+                            <td>Natural Log</td>
+                        </tr>
+                        <tr>
+                            <td>sin x</td>
+                            <td>cos x</td>
+                            <td>Sine</td>
+                        </tr>
+                        <tr>
+                            <td>cos x</td>
+                            <td>-sin x</td>
+                            <td>Cosine</td>
+                        </tr>
+                        <tr>
+                            <td>tan x</td>
+                            <td>sec² x</td>
+                            <td>Tangent</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Advanced Rules Table -->
+            <div class="formula-table-wrapper">
+                <h3 class="table-title">Advanced Rules</h3>
+                <table class="formula-table">
+                    <thead>
+                        <tr>
+                            <th>Operation</th>
+                            <th>Formula</th>
+                            <th>Rule Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>f(x) · g(x)</td>
+                            <td>f'(x)g(x) + f(x)g'(x)</td>
+                            <td>Product Rule</td>
+                        </tr>
+                        <tr>
+                            <td>f(x) / g(x)</td>
+                            <td>[f'(x)g(x) - f(x)g'(x)] / g²(x)</td>
+                            <td>Quotient Rule</td>
+                        </tr>
+                        <tr>
+                            <td>f(g(x))</td>
+                            <td>f'(g(x)) · g'(x)</td>
+                            <td>Chain Rule</td>
+                        </tr>
+                        <tr>
+                            <td>aˣ</td>
+                            <td>aˣ · ln a</td>
+                            <td>General Exponential</td>
+                        </tr>
+                        <tr>
+                            <td>logₐ x</td>
+                            <td>1 / (x · ln a)</td>
+                            <td>General Logarithm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Limit Definitions Table -->
+            <div class="formula-table-wrapper">
+                <h3 class="table-title">Limit Definitions</h3>
+                <table class="formula-table">
+                    <thead>
+                        <tr>
+                            <th>Concept</th>
+                            <th>Limit Expression</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Derivative (Limit Definition)</td>
+                            <td>lim(h→0) [f(x+h) - f(x)] / h</td>
+                            <td>Standard Form</td>
+                        </tr>
+                        <tr>
+                            <td>Derivative (Alternate)</td>
+                            <td>lim(x→a) [f(x) - f(a)] / (x - a)</td>
+                            <td>Point Form</td>
+                        </tr>
+                        <tr>
+                            <td>Special Limit 1</td>
+                            <td>lim(x→0) sin(x) / x = 1</td>
+                            <td>Trigonometric</td>
+                        </tr>
+                        <tr>
+                            <td>Special Limit 2</td>
+                            <td>lim(x→0) (1 - cos x) / x = 0</td>
+                            <td>Trigonometric</td>
+                        </tr>
+                        <tr>
+                            <td>Euler's Limit</td>
+                            <td>lim(n→∞) (1 + 1/n)ⁿ = e</td>
+                            <td>Defines e</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Applications Table -->
+            <div class="formula-table-wrapper">
+                <h3 class="table-title">Real-World Applications</h3>
+                <table class="formula-table">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Formula</th>
+                            <th>Meaning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kinematics</td>
+                            <td>v(t) = ds/dt</td>
+                            <td>Velocity is rate of change of position</td>
+                        </tr>
+                        <tr>
+                            <td>Kinematics</td>
+                            <td>a(t) = dv/dt = d²s/dt²</td>
+                            <td>Acceleration is rate of change of velocity</td>
+                        </tr>
+                        <tr>
+                            <td>Economics</td>
+                            <td>MC = dC/dx</td>
+                            <td>Marginal Cost</td>
+                        </tr>
+                        <tr>
+                            <td>Economics</td>
+                            <td>MR = dR/dx</td>
+                            <td>Marginal Revenue</td>
+                        </tr>
+                        <tr>
+                            <td>Optimization</td>
+                            <td>f'(c) = 0</td>
+                            <td>Critical Point (find extrema)</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
