@@ -419,12 +419,13 @@
             const allOptions = [currentGameFn.deriv, ...wrongAnswers].sort(() => Math.random() - 0.5);
 
             document.getElementById('dragBlocks').innerHTML = allOptions.map(opt =>
-                `<div class="drag-block" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">${opt}</div>`
+                `<div class="drag-block" draggable="true" ondragstart="drag(event)" ondragover="allowDrop(event)">${opt}</div>`
             ).join('');
 
             const dropZone = document.getElementById('dropZone');
             dropZone.innerHTML = '<p style="color: var(--gray);">Drop derivative here</p>';
-            dropZone.ondrop = (e) => drop(e, currentGameFn.deriv);
+            dropZone.ondrop = drop;
+            dropZone.ondragover = allowDrop;
         }
 
         function allowDrop(ev) {
@@ -435,12 +436,12 @@
             ev.dataTransfer.setData("text", ev.target.textContent);
         }
 
-        function drop(ev, correctAnswer) {
+        function drop(ev) {
             ev.preventDefault();
             const answer = ev.dataTransfer.getData("text");
             document.getElementById('dropZone').innerHTML = answer;
 
-            if (answer === correctAnswer) {
+            if (answer === currentGameFn.deriv) {
                 gameScore += 10;
                 document.getElementById('gameScore').textContent = gameScore;
                 setTimeout(() => {
